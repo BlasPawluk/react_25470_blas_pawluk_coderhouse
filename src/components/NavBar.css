@@ -1,0 +1,16 @@
+.divPadre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: red;
+}
+
+.links {
+    display: flex;
+    width: 10%;
+    justify-content: space-around;
+}
+
+.navBar {
+    width: 100%;
+}
