@@ -5,9 +5,9 @@ export const NavBar = () => {
   return (
     <nav className='navBar'>
       <div className='divPadre'>
-        <h1>Hola Mundo</h1>
+        <h1>KYBER</h1>
         <div className='links'>
-          <a href='#'>Home</a>
+          <a href='#'>Nosotros</a>
           <a href='#'>Products</a>
         </div>
       </div>
