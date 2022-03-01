@@ -1,14 +1,18 @@
 import React from 'react';
 import './NavBar.css';
+import { FaShoppingCart } from 'react-icons/fa';
 
 export const NavBar = () => {
   return (
     <nav className='navBar'>
       <div className='divPadre'>
-        <h1>KYBER</h1>
+        <h1>KYBER MOVIES</h1>
         <div className='links'>
           <a href='#'>Nosotros</a>
-          <a href='#'>Products</a>
+          <a href='#'>Movies</a>
+          <a href='#'>
+            <FaShoppingCart />
+          </a>
         </div>
       </div>
     </nav>
