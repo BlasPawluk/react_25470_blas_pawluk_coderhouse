@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 a:visited {
     text-decoration: none;
     color: #dff6ff;
@@ -38,6 +33,16 @@ a:visited {
     width: 100%;
 }
 
-.mainImage {
-    background-image: 'src/img/c1.jpg';
+.colorFondo {}
+
+.resaltar {
+    color: #dff6ff;
+    background-color: #5d8bf4;
+    padding: 1rem;
+}
+
+.resaltar1 {
+    color: #5d8bf4;
+    background-color: #dff6ff;
+    padding: 1rem;
 }

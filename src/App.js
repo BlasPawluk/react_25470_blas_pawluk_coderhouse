@@ -1,15 +1,23 @@
 import './App.css';
 import { NavBar } from './components/NavBar';
-import { Footer } from './components/Footer';
 import { Main } from './components/Main';
+import { Footer } from './components/Footer';
 
 function App() {
+  const edad = 22;
+  const usuarios = ['Blas', ' ', 'Guido', ' ', 'Eddie'];
+  //const miComponente = Footer;
   return (
-    <div>
+    <>
       <NavBar />
-      <Main nombre='Blas' apellido='Pawluk' />
+      <Main
+        nombre='Blas'
+        apellido='Pawluk'
+        edad={edad}
+        usuarios={usuarios}
+      ></Main>
       <Footer />
-    </div>
+    </>
   );
 }
 
