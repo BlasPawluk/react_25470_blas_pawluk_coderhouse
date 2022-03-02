@@ -18,7 +18,7 @@ export const Main = (props) => {
           <div></div>
         </div>
       </div>
-      <ItemListContainer nombre='Ary' apellido='Gutierrez' greetings={saludo} />
+      <ItemListContainer nombre='Eddie' apellido='Pawluk' greetings={saludo} />
     </main>
   );
 };
