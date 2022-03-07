@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from "react"
-import './NavBar.css';
+import './Estilos.css';
 
 export const ItemCount = (props) => {
   const [contador, setContador] = useState(props.inicial)

@@ -1,5 +1,5 @@
 import React from 'react';
-import './NavBar.css';
+import './Estilos.css';
 import { ItemListContainer } from './ItemListContainer';
 
 export const Main = (props) => {

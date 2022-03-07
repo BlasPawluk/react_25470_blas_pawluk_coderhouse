@@ -1,5 +1,5 @@
 import React from 'react';
-import './NavBar.css';
+import './Estilos.css';
 import { ItemCount } from './ItemCount';
 
 export const ItemListContainer = ({datos}) => {
