@@ -1,5 +1,6 @@
 import React from 'react';
 import './NavBar.css';
+import { ItemCount } from './ItemCount';
 
 export const ItemListContainer = ({datos}) => {
   const {nombre, apellido, saludo} = datos
@@ -7,6 +8,7 @@ export const ItemListContainer = ({datos}) => {
   return (
     <div>
       Hola soy {nombre} {apellido};<p>{saludo}</p>
+      <ItemCount inicial={1} stock= {10}/>
     </div>
   );
 };

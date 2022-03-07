@@ -17,9 +17,8 @@ function App() {
         edad = { edad }
         usuarios = { usuarios }
         initial = { 1 } >
-        
-        </Main> <
-        Footer / >
+        </Main>
+        <Footer/>
         </>
     );
 }

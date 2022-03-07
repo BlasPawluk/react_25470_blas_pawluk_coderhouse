@@ -1,7 +1,6 @@
 import React from 'react';
 import './NavBar.css';
 import { ItemListContainer } from './ItemListContainer';
-import { ItemCount } from './ItemCount';
 
 export const Main = (props) => {
   
@@ -23,7 +22,6 @@ export const Main = (props) => {
           <div></div>
         </div>
       </div>
-      <ItemCount initial={1}/>
       <ItemListContainer datos={datos} />
     </main>
   );
