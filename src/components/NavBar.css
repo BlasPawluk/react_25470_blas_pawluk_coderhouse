@@ -44,3 +44,9 @@ a:visited {
     background-color: #dff6ff;
     padding: 1rem;
 }
+
+.resaltar2 {
+    color: #dff6ff;
+    background-color: blue;
+    padding: 1rem;
+}

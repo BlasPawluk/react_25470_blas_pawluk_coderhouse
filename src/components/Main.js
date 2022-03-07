@@ -1,11 +1,16 @@
 import React from 'react';
 import './NavBar.css';
-import c1 from '../images/c1.png';
 import { ItemListContainer } from './ItemListContainer';
+import { ItemCount } from './ItemCount';
 
 export const Main = (props) => {
-  console.log(props);
-  const saludo = 'Disfruten la estadia';
+  
+  const datos = {
+    nombre: 'Blas',
+    apellido:'Pawluk',
+    edad: 22,
+    saludo: 'Disfruten la estadia'
+  }
   return (
     <main>
       <div className='colorFondo'>
@@ -18,7 +23,8 @@ export const Main = (props) => {
           <div></div>
         </div>
       </div>
-      <ItemListContainer nombre='Eddie' apellido='Pawluk' greetings={saludo} />
+      <ItemCount initial={1}/>
+      <ItemListContainer datos={datos} />
     </main>
   );
 };
