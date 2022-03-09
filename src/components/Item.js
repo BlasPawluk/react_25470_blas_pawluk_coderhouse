@@ -1,13 +1,14 @@
 import React from 'react'
 import './Estilos.css'
 
-export const Item = ({productos}) => {
-  const {title, price, stock} = productos
+export const Item = (props) => {
+  const {title, price, stock} = props.producto
+  console.log(props)
   return (
-    <div>
+    <div className='resaltar'>
       <h4>{title}</h4>
-      <p>${price}</p>
-      <p>Actualmente nos quedan: {stock}</p>
+      <div>${price}</div>
+      <div>Actualmente nos quedan: {stock}</div>
     </div>
   )
 }

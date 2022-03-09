@@ -5,9 +5,8 @@ import './Estilos.css'
 export const ItemList = ({productos =[]}) => {
   return (
     <div className='declarar'>
-      <p>
-    {productos.map((productos) => ((<Item key={productos.id} productos={productos}/>)))}
-      </p>
+    {productos.map((elemen) => {
+      return ((<Item key={elemen.id} producto={elemen} nombre={'hola'}/>))})}
     </div>
   )
 }

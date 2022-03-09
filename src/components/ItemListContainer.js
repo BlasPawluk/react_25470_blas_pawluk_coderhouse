@@ -5,7 +5,7 @@ import { ItemList } from './ItemList';
 
 const productos = [
   {id: 1, title: "BMW", price: 100, stock: 10},
-  {id: 2, title: "Mercedes Benz", precio: 200, stock: 5},
+  {id: 2, title: "Mercedes Benz", price: 200, stock: 5},
   {id: 3, title: "Audi", price: 300, stock: 8},
   {id: 4, title: "Ford", price: 400, stock: 7},
   {id: 5, title: "Fiat", price: 500, stock: 9}
@@ -31,7 +31,7 @@ export function ItemListContainer() {
   }else{
     return(      
       <div className='divPadre'>
-  <ItemList products={products}/>
+  <ItemList productos={products} />
 </div>
   )
   }
