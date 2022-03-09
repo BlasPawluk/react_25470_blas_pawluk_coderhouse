@@ -1,34 +1,39 @@
 import React from 'react';
 import './Estilos.css';
 import {useState,useEffect} from 'react'
-
+import { ItemList } from './ItemList';
 
 const productos = [
-  {id: 1, title: "BMW", precio: 100, stock: 10},
+  {id: 1, title: "BMW", price: 100, stock: 10},
   {id: 2, title: "Mercedes Benz", precio: 200, stock: 5},
-  {id: 3, title: "Audi", precio: 300, stock: 8},
-  {id: 4, title: "Ford", precio: 400, stock: 7},
-  {id: 5, title: "Fiat", precio: 500, stock: 9}];
-  
+  {id: 3, title: "Audi", price: 300, stock: 8},
+  {id: 4, title: "Ford", price: 400, stock: 7},
+  {id: 5, title: "Fiat", price: 500, stock: 9}
+];
 
-export const ItemListContainer = () => {
-  const [productos, setproductos] = useState([])
+
+export function ItemListContainer() {
+  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(false)
   useEffect(() => {
     const promise = new Promise((res,rej)=> {
       setTimeout(() => {
         res(productos)
-      }, 3000);
+      }, 2000);
     });
     promise.then((res) =>{
-      setproductos(res);
+      setProducts(res);
       setLoading(true);
     }).catch((err)=> console.log(err));
   });
   if(!loading) {
-    return <h4>...Loading</h4>
+    return <h3>...Loading</h3>
   }else{
-<>{console.log(productos)}</>
+    return(      
+      <div className='divPadre'>
+  <ItemList products={products}/>
+</div>
+  )
   }
 }
 
