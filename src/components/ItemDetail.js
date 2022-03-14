@@ -2,7 +2,7 @@ import React from 'react'
 import Item from './Item.js'
 import './Estilos.css'
 
-export const ItemList = ({productos =[]}) => {
+export const ItemDetail = ({productos =[]}) => {
   return (
     <div className='declarar'>
     {productos.map((elemen) => {
@@ -10,4 +10,4 @@ export const ItemList = ({productos =[]}) => {
     </div>
   )
 }
-export default ItemList
+export default ItemDetail
