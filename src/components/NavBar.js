@@ -1,18 +1,22 @@
 import React from 'react';
 import './Estilos.css';
 import { FaShoppingCart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
   return (
     <nav className='navBar'>
       <div className='divPadre'>
-        <h1>KYBER CARS</h1>
+        <Link to='/'>
+          <h1>KYBER CARS</h1>
+        </Link>
         <div className='links'>
-          <a href='#'>Nosotros</a>
-          <a href='#'>Movies</a>
-          <a href='#'>
+          <Link to='/BMW'>BMW</Link>
+          <Link to='/Audi'>Audi</Link>
+          <Link to='/Mercedes-Benz'>Mercedes</Link>
+          <Link to='/Cart'>
             <FaShoppingCart />
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

@@ -1,37 +1,36 @@
 import React from 'react';
 import './Estilos.css';
-import {useState,useEffect} from 'react'
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
-
-const productos = [
-  {id: 1, title: "BMW", price: 100, stock: 10},
-
-];
-
+import { productos } from './ItemListContainer';
 
 export function ItemDetailContainer() {
-  const [products, setProducts] = useState([])
-  const [loading, setLoading] = useState(false)
+  const { id } = useParams();
+  const [product, setProduct] = useState({});
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    const promise = new Promise((res,rej)=> {
+    const promise = new Promise((res, rej) => {
       setTimeout(() => {
-        res(productos)
+        res(productos);
       }, 2000);
     });
-    promise.then((res) =>{
-      setProducts(res);
-      setLoading(true);
-    }).catch((err)=> console.log(err));
+    promise
+      .then((res) => {
+        setProduct(res.find((productos) => productos.id === +id));
+        setLoading(true);
+      })
+      .catch((err) => console.log(err));
   });
-  if(!loading) {
-    return <h5>Please Wait...</h5>
-  }else{
-    return(      
+  if (!loading) {
+    return <h5>Please Wait...</h5>;
+  } else {
+    return (
       <div className='divPadre'>
-  <ItemDetail productos={products} />
-</div>
-  )
+        <ItemDetail product={product} />
+      </div>
+    );
   }
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

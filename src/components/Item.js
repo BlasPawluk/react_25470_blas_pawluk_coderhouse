@@ -1,19 +1,20 @@
-import React from 'react'
-import './Estilos.css'
-
+import React from 'react';
+import './Estilos.css';
+import { NavLink } from 'react-router-dom';
 export const Item = (props) => {
-  const {title, price, stock} = props.producto
-  console.log(props.producto.title)
-  console.log(props.producto.price)
-  console.log(props.producto.stock)
+  const { id, title, price, stock } = props.producto;
 
   return (
     <div className='resaltar'>
       <h4>{title}</h4>
       <div>${price}</div>
       <div>Actualmente nos quedan: {stock}</div>
-    </div>
-  )
-}
 
-export default Item
+      <NavLink to={`/item/${id}`}>
+        <button>Mas Info</button>
+      </NavLink>
+    </div>
+  );
+};
+
+export default Item;
