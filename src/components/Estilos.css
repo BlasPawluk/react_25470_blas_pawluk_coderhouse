@@ -80,3 +80,8 @@ a:visited {
   box-shadow: 0 2px 5px black;
   border-radius: 1rem;
 }
+
+.flexCont {
+  display: flex;
+  flex-direction: column;
+}
