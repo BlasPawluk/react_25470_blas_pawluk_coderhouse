@@ -1,6 +1,6 @@
 import React from 'react';
 import './Estilos.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { NavLink } from 'react-router-dom';
 export const Item = (props) => {
@@ -13,13 +13,10 @@ export const Item = (props) => {
       <div>Actualmente nos quedan: {stock}</div>
 
       <NavLink to={`/item/${id}`}>
-        <ToastContainer autoClose={5000} />
-        <button onClick={toast.success('Cargado Exitosamente')}>
-          Mas Info
-        </button>
+        <button className='resaltar1'>Mas Info</button>
       </NavLink>
     </div>
-  )[id];
+  );
 };
 
 export default Item;

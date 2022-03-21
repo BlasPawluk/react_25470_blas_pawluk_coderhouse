@@ -3,7 +3,7 @@ import './Estilos.css';
 import { useState, useEffect } from 'react';
 import { ItemList } from './ItemList';
 import { useParams } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export const productos = [
   {
@@ -38,7 +38,7 @@ export function ItemListContainer() {
     const promise = new Promise((res, rej) => {
       setTimeout(() => {
         res(productos);
-      }, 8000);
+      }, 2000);
     });
     promise
       .then((res) => {
@@ -48,20 +48,21 @@ export function ItemListContainer() {
           setProducts(res.filter((productos) => productos.title === category));
         }
         setLoading(true);
-        console.log(category);
       })
       .catch((err) => console.log(err));
   }, [category]);
-  if (!loading) {
-    return <>{toast.info('Cargando...')}</>;
-  } else {
-    return (
-      <div className='divPadre'>
-        <ItemList productos={products} />
-        <ToastContainer autoClose={5000} />
-      </div>
-    );
-  }
+  return (
+    <>
+      {' '}
+      {!loading ? (
+        <h4>Cargando...</h4>
+      ) : (
+        <div className='divPadre'>
+          <ItemList productos={products} />
+        </div>
+      )}
+    </>
+  );
 }
 
 export default ItemListContainer;

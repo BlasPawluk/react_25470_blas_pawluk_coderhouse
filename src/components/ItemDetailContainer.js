@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
 import { productos } from './ItemListContainer';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 export function ItemDetailContainer() {
   const { id } = useParams();
@@ -14,7 +14,7 @@ export function ItemDetailContainer() {
     const promise = new Promise((res, rej) => {
       setTimeout(() => {
         res(productos);
-      }, 8000);
+      }, 2000);
     });
     promise
       .then((res) => {
@@ -24,12 +24,11 @@ export function ItemDetailContainer() {
       .catch((err) => console.log(err));
   }, [id]);
   if (!loading) {
-    return <>{toast.info('Cargando...')}</>;
+    return <h4>Cargando...</h4>;
   } else {
     return (
       <div className='divPadre'>
         <ItemDetail product={product} />
-        <ToastContainer autoClose={5000} />
       </div>
     );
   }

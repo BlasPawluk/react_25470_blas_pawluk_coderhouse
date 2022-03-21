@@ -12,21 +12,22 @@ export const ItemCount = (props) => {
       setContador(contador - 1);
     }
   };
-  const resetear = () => {
+  const agregarCart = () => {
+    props.onAdd(contador);
     setContador(props.inicial);
   };
   return (
     <main className='resaltar2'>
       <h2 className='resaltar2'>Cuantos desea Llevar?</h2>
       <p className='resaltar'>Actualmente seleccionó: {contador}</p>
-      <button onClick={sumar} className='resaltar1'>
-        Aumentar
+      <button onClick={restar} className='resaltar1'>
+        -
       </button>
-      <button onClick={resetear} className='resaltar1'>
+      <button onClick={agregarCart} className='resaltar1'>
         Agregar al Carrito
       </button>
-      <button onClick={restar} className='resaltar1'>
-        Disminuir
+      <button onClick={sumar} className='resaltar1'>
+        +
       </button>
     </main>
   );
