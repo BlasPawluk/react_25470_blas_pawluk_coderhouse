@@ -1,30 +1,33 @@
-import React from 'react'
-import {useState} from "react"
+import React from 'react';
+import { useState } from 'react';
 import './Estilos.css';
 
-
 export const ItemCount = (props) => {
-  const [contador, setContador] = useState(props.inicial)
+  const [contador, setContador] = useState(props.inicial);
   const sumar = () => {
-    if (props.stock> contador)
-    setContador(contador + 1)
-  }
+    if (props.stock > contador) setContador(contador + 1);
+  };
   const restar = () => {
-    if (contador > props.inicial){
-      setContador(contador - 1)
+    if (contador > props.inicial) {
+      setContador(contador - 1);
     }
-}
-const resetear = () => {
-  setContador(props.inicial)
-
-}
+  };
+  const resetear = () => {
+    setContador(props.inicial);
+  };
   return (
     <main className='resaltar2'>
-      <h2 className='resaltar2'>Contador</h2>
-      <p className='resaltar'>Mi contador: {contador}</p>
-            <button onClick={sumar} className='resaltar1'>Aumentar</button>
-            <button onClick={resetear} className='resaltar1'>Reset</button>
-            <button onClick={restar} className='resaltar1'>Disminuir</button>
+      <h2 className='resaltar2'>Cuantos desea Llevar?</h2>
+      <p className='resaltar'>Actualmente seleccionó: {contador}</p>
+      <button onClick={sumar} className='resaltar1'>
+        Aumentar
+      </button>
+      <button onClick={resetear} className='resaltar1'>
+        Agregar al Carrito
+      </button>
+      <button onClick={restar} className='resaltar1'>
+        Disminuir
+      </button>
     </main>
-  )
-}
+  );
+};

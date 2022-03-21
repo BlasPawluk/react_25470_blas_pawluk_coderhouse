@@ -3,6 +3,7 @@ import { NavBar } from './components/NavBar';
 import { Main } from './components/Main';
 import { Footer } from './components/Footer';
 import { BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const edad = 22;
@@ -21,6 +22,7 @@ function App() {
           initial={1}
         ></Main>
         <Footer />
+        <ToastContainer />
       </BrowserRouter>
     </>
   );
