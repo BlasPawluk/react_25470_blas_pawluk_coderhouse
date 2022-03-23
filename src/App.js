@@ -10,21 +10,19 @@ function App() {
   const usuarios = ['Blas', ' ', 'Guido', ' ', 'Eddie'];
   const miOnAdd = () => {};
   return (
-    <>
-      <BrowserRouter>
-        <NavBar />
-        <Main
-          nombre='Blas'
-          apellido='Pawluk'
-          onAdd={miOnAdd}
-          edad={edad}
-          usuarios={usuarios}
-          initial={1}
-        ></Main>
-        <Footer />
-        <ToastContainer />
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <NavBar />
+      <Main
+        nombre='Blas'
+        apellido='Pawluk'
+        onAdd={miOnAdd}
+        edad={edad}
+        usuarios={usuarios}
+        initial={1}
+      ></Main>
+      <Footer />
+      <ToastContainer />
+    </BrowserRouter>
   );
 }
 

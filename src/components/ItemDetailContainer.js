@@ -7,6 +7,7 @@ import { productos } from './ItemListContainer';
 import { toast } from 'react-toastify';
 
 export function ItemDetailContainer() {
+  const cargar = toast.info('Cargando productos...');
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
@@ -24,7 +25,7 @@ export function ItemDetailContainer() {
       .catch((err) => console.log(err));
   }, [id]);
   if (!loading) {
-    return <h4>Cargando...</h4>;
+    return <>{`${cargar}`}</>;
   } else {
     return (
       <div className='divPadre'>
