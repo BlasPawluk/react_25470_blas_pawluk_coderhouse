@@ -34,6 +34,8 @@ export function ItemListContainer() {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const cargar = toast.info('Cargando productos...');
+
   useEffect(() => {
     const promise = new Promise((res, rej) => {
       setTimeout(() => {
@@ -55,7 +57,7 @@ export function ItemListContainer() {
     <>
       {' '}
       {!loading ? (
-        <h4>Cargando...</h4>
+        <>{`${cargar}`}</>
       ) : (
         <div className='divPadre'>
           <ItemList productos={products} />

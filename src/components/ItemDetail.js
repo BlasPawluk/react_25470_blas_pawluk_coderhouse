@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import './Estilos.css';
 import { ItemCount } from './ItemCount';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { contexto } from './CartContexto';
+
 export const ItemDetail = ({ product }) => {
   const { title, price, stock, image } = product;
-
   const [cantidad, setCantidad] = useState();
+  const { addItem } = useContext(contexto);
   function onAdd(contador) {
     setCantidad(contador);
+    addItem(product, contador);
   }
   return (
     <div className='declararTexto flexCont'>

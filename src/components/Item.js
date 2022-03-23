@@ -1,6 +1,5 @@
 import React from 'react';
 import './Estilos.css';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { NavLink } from 'react-router-dom';
 export const Item = (props) => {

@@ -1,14 +1,10 @@
 import React from 'react';
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import './Estilos.css';
 import { toast } from 'react-toastify';
-import { contexto } from '../miContexto';
 
 export const ItemCount = (props) => {
   const [contador, setContador] = useState(props.inicial);
-  //useContext(contexto);
-  //console.log(contexto);
-
   const sumar = () => {
     if (props.stock > contador) setContador(contador + 1);
   };
