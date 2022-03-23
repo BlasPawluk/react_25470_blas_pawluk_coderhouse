@@ -9,23 +9,27 @@ const MiProvider = ({ children }) => {
   const addItem = (product, contador) => {
     let cartProduct = { product, contador };
     console.log('cartProduct', cartProduct);
-    let cartAux = [];
-    setCarrito(cartAux);
+    let cartAux = [carrito];
     if (isInCart(product)) {
-      cartProduct = carrito.find((item) => item.product === product);
+      cartProduct = product.find((item) => item.product === product);
       cartProduct.contador = cartProduct.contador + contador;
+      cartAux = [...carrito];
     } else {
       cartAux = [cartProduct, ...carrito];
     }
+    setCarrito(cartAux);
   };
 
-  const removeItem = () => {};
+  const removeItem = (product) => {
+    if (isInCart(product)) {
+    }
+  };
   const clearCart = () => {
     setCarrito([]);
   };
   const isInCart = (product) => {
     if (carrito) {
-      carrito.some((item) => item.product === product);
+      carrito.some((item) => item.producto.id === product.id);
     }
   };
   const valorDeContexto = {
