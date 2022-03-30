@@ -8,8 +8,8 @@ const MiProvider = ({ children }) => {
 
   const addItem = (product, contador) => {
     let cartProduct = { product, contador };
-    console.log('cartProduct', cartProduct);
     let cartAux = [carrito];
+
     if (isInCart(product)) {
       cartProduct = product.find((item) => item.product === product);
       cartProduct.contador = cartProduct.contador + contador;
@@ -20,9 +20,8 @@ const MiProvider = ({ children }) => {
     setCarrito(cartAux);
   };
 
-  const removeItem = (product) => {
-    if (isInCart(product)) {
-    }
+  const removeItem = (id) => {
+    setCarrito(carrito.filter((item) => item.product.id !== id));
   };
   const clearCart = () => {
     setCarrito([]);

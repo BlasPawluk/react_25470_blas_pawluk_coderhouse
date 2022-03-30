@@ -4,7 +4,7 @@ import { AiFillDelete } from 'react-icons/ai';
 
 export const Cart = () => {
   const { clearCart } = useContext(contexto);
-  const { carrito } = useContext(contexto);
+  const { carrito, removeItem } = useContext(contexto);
 
   return (
     <div className='resaltar1 divPadre'>
@@ -14,13 +14,18 @@ export const Cart = () => {
           <button className='resaltar2' onClick={clearCart}>
             Limpiar Carrito
           </button>
-          <div key={item.id}>
-            <h3>{item.title}</h3>
+          <div key={item.product.id}>
+            <h3>{item.product.title}</h3>
             <p>
-              {item.price} x {item.stock}
+              {item.product.price} x {item.product.stock}
             </p>
-            <p>Total : $ {item.price * item.stock} </p>
-            <button className='resaltar2'>
+            <p>
+              Total : $ {item.product.price} x {item.product.stock}{' '}
+            </p>
+            <button
+              onClick={() => removeItem(item.product.id)}
+              className='resaltar2'
+            >
               <AiFillDelete />
             </button>
           </div>
