@@ -1,10 +1,14 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 export const contexto = createContext();
 const { Provider } = contexto;
 
 const MiProvider = ({ children }) => {
   const [carrito, setCarrito] = useState([]);
   const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    checkTotal();
+  }, [carrito]);
 
   const addItem = (product, contador) => {
     let cartProduct = { product, contador };
@@ -28,8 +32,15 @@ const MiProvider = ({ children }) => {
   };
   const isInCart = (product) => {
     if (carrito) {
-      carrito.some((item) => item.producto.id === product.id);
+      carrito.some((item) => item.product.id === product.id);
     }
+  };
+  const checkTotal = () => {
+    let totalAux = 0;
+    carrito.map((item) => {
+      totalAux = totalAux + item.product.price * item.contador;
+    });
+    setTotal(totalAux);
   };
   const valorDeContexto = {
     carrito: carrito,

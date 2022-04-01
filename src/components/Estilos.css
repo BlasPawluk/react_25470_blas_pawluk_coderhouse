@@ -92,3 +92,11 @@ a:visited {
   justify-content: center;
   align-items: center;
 }
+
+.cartVacio {
+  display: flex;
+  color: #dff6ff;
+  background-color: #5d8bf4;
+  padding: 1rem;
+  width: auto;
+}
