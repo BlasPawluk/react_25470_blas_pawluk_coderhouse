@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { ItemList } from './ItemList';
 import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { db } from './FireBase';
+import { getDocs, collection } from 'firebase/firestore';
 
 export const productos = [
   {
@@ -34,9 +36,27 @@ export function ItemListContainer() {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const cargar = toast.info('Cargando productos...');
 
   useEffect(() => {
+    const productosCollection = collection(db, 'productos');
+    const documentos = getDocs(productosCollection);
+    documentos
+      .then((respuesta) => {
+        const aux = [];
+        respuesta.forEach((documentos) => {
+          const producto = {
+            id: documentos.id,
+            ...documentos.data(),
+          };
+          console.log(productos);
+          aux.push(producto);
+        });
+        setProducts(aux);
+      })
+      .catch((err) => {
+        toast.error('Hubo un error al cargar los productos');
+      });
+
     const promise = new Promise((res, rej) => {
       setTimeout(() => {
         res(productos);
@@ -53,11 +73,11 @@ export function ItemListContainer() {
       })
       .catch((err) => console.log(err));
   }, [category]);
+
   return (
     <>
-      {' '}
       {!loading ? (
-        <>{`${cargar}`}</>
+        <>{`${toast.info('Cargando...')}`}</>
       ) : (
         <div className='divPadre'>
           <ItemList productos={products} />
