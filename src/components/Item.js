@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { NavLink } from 'react-router-dom';
 export const Item = (props) => {
   const { id, title, price, stock } = props.producto;
-
   return (
     <div className='resaltar'>
       <h4>{title}</h4>
