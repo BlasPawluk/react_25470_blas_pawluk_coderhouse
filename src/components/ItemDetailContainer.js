@@ -3,7 +3,7 @@ import './Estilos.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
-import { productos } from './ItemListContainer';
+//import { productos } from './ItemListContainer';
 import { toast } from 'react-toastify';
 
 export function ItemDetailContainer() {
@@ -14,12 +14,12 @@ export function ItemDetailContainer() {
   useEffect(() => {
     const promise = new Promise((res, rej) => {
       setTimeout(() => {
-        res(productos);
+        res(product);
       }, 2000);
     });
     promise
       .then((res) => {
-        setProduct(res.find((productos) => productos.id === +id));
+        setProduct(res.find((product) => product.id === +id));
         setLoading(true);
       })
       .catch((err) => console.log(err));
