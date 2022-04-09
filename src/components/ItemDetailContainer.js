@@ -3,33 +3,37 @@ import './Estilos.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
-//import { productos } from './ItemListContainer';
 import { toast } from 'react-toastify';
+import { dbFireBase } from './Firebase';
+import { collection, getDoc, doc } from 'firebase/firestore';
 
 export function ItemDetailContainer() {
   const cargar = toast.info('Cargando productos...');
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    const promise = new Promise((res, rej) => {
-      setTimeout(() => {
-        res(product);
-      }, 2000);
-    });
-    promise
-      .then((res) => {
-        setProduct(res.find((product) => product.id === +id));
+    const coleccionProductos = collection(dbFireBase, 'productos');
+    const pedido = doc(coleccionProductos, id);
+    const docs = getDoc(pedido);
+
+    docs
+      .then((resultado) => {
+        const producto = resultado.data();
+        setProduct(producto);
         setLoading(true);
       })
-      .catch((err) => console.log(err));
+      .catch((error) => {
+        console.log(error);
+      });
   }, [id]);
   if (!loading) {
     return <>{`${cargar}`}</>;
   } else {
     return (
       <div className='divPadre'>
-        <ItemDetail product={product} />
+        <ItemDetail product={product} id={id} />
       </div>
     );
   }

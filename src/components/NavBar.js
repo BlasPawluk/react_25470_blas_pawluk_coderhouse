@@ -14,9 +14,9 @@ export const NavBar = () => {
           <AiOutlineHome />
         </Link>
         <div className='links'>
-          <Link to='/BMW'>BMW</Link>
-          <Link to='/Audi'>Audi</Link>
-          <Link to='/Mercedes-Benz'>Mercedes</Link>
+          <Link to='/category/BMW'>BMW</Link>
+          <Link to='/category/Audi'>Audi</Link>
+          <Link to='/category/Mercedez-Benz'>Mercedes</Link>
           <Link to='/Cart'>
             <FaShoppingCart />
           </Link>

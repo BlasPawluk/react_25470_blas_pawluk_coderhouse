@@ -8,52 +8,41 @@ import { dbFireBase } from './Firebase';
 import { getDocs, collection, where, query } from 'firebase/firestore';
 
 export function ItemListContainer() {
+  const { id } = useParams();
+
   const [products, setProducts] = useState([]);
-  const { idCategory } = useParams();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const productosCollection = collection(dbFireBase, 'productos');
-    const documentos = getDocs(productosCollection);
-    documentos
-      .then((respuesta) => {
-        const aux = [];
-        respuesta.forEach((documentos) => {
-          const productos = {
-            id: documentos.id,
-            ...documentos.data(),
+
+    const productosFiltrados = id
+      ? query(collection(dbFireBase, 'productos'), where('categoria', '==', id))
+      : productosCollection;
+
+    const productos = getDocs(productosFiltrados);
+
+    productos
+      .then((res) => {
+        const docs = res.docs;
+        const docs_reset = docs.map((doc) => {
+          const producto = {
+            id: doc.id,
+            ...doc.data(),
           };
-          console.log(documentos, documentos.id);
-          aux.push(productos);
+          return producto;
         });
-        setProducts(aux);
+        setProducts(docs_reset);
       })
-      .catch((err) => {
-        toast.error('Hubo un error al cargar los productos');
+      .catch((error) => {
+        console.log(error);
       });
-    if (idCategory) {
-      const q = query(
-        collection(dbFireBase, 'productos'),
-        where('categoria', '==', idCategory)
-      );
-      getDocs(q)
-        .then((resp) =>
-          setProducts(
-            resp.docs.map((p) => ({ documentos: p.data(), id: p.id }))
-          )
-        )
-        .catch((err) => console.log(err));
-      console.log(q);
-    } else {
-      getDocs(collection(dbFireBase, 'productos'))
-        .then((resp) =>
-          setProducts(
-            resp.docs.map((p) => ({ documentos: p.data(), id: p.id }))
-          )
-        )
-        .catch((err) => console.log(err));
-    }
-  }, [idCategory]);
+
+    setTimeout(() => {
+      setLoading(true);
+    }, 2000);
+    return setLoading(false);
+  }, [id]);
   return (
     <>
       {!loading ? (

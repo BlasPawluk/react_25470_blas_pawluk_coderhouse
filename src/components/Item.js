@@ -3,17 +3,14 @@ import './Estilos.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { NavLink } from 'react-router-dom';
 export const Item = ({ producto }) => {
-  const { documentos, id } = producto;
-  console.log(documentos, id);
-
   return (
     <ul>
       <div className='divPadre'>
         <div className='resaltar'>
           <h4>{producto.title}</h4>
-          <div>${producto.price}</div>
+          <div>${producto.precio}</div>
           <div>Actualmente nos quedan: {producto.stock}</div>
-          <NavLink to={`/item/${id}`}>
+          <NavLink to={`/item/${producto.id}`}>
             <button className='resaltar1'>Mas Info</button>
           </NavLink>
         </div>

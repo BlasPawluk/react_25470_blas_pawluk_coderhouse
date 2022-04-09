@@ -13,7 +13,7 @@ export const Main = () => {
       <Routes>
         <Route path='/' element={<ItemListContainer />} />
         <Route path='/Cart' element={<Cart />} />
-        <Route path='/:category' element={<ItemListContainer />}></Route>
+        <Route path='/category/:id' element={<ItemListContainer />}></Route>
         <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
       </Routes>
     </main>
