@@ -21,9 +21,11 @@ a:visited {
 
 .declararTexto {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6rem;
   align-items: center;
-  padding: 1rem;
+  padding: 3rem;
   margin: 1rem;
   color: red;
   background-color: yellow;
@@ -53,7 +55,7 @@ a:visited {
 .resaltar {
   color: #dff6ff;
   background-color: #5d8bf4;
-  padding: 1rem;
+  padding: 10px;
 }
 
 .resaltar1 {
