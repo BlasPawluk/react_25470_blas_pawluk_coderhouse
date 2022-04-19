@@ -37,6 +37,7 @@ export const Cart = () => {
           <button className='resaltar2' onClick={clearCart}>
             Limpiar Carrito
           </button>
+          <button className='resaltar3'>Confirmar Compra</button>
         </ul>
       ) : (
         <div className='divPadre'>

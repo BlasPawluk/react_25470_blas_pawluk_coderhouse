@@ -8,7 +8,7 @@ export const NavBar = () => {
   return (
     <nav className='navBar'>
       <div className='divPadre'>
-        <Link to='/' className='flexCont2'>
+        <Link to='/' className='flexCont2 links'>
           <AiOutlineHome />
           <h1>KYBER CARS </h1>
           <AiOutlineHome />

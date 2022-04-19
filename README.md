@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+![Banner](/app_blas/src/images/ReactJs_Proyect_Blas_Pawluk.jpg)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Kyber Cars
 
-## Available Scripts
+## Welcome to my final ReactJS project for CoderHouse academy, as a part of the front-end web developer career. This project consists of an car dealership based e-commerce implemented with React together with React Route and Router, React Hooks, handmade CSS for React components, React Toastify for notifications and using Firebase as a mock database.
 
-In the project directory, you can run:
+## **Required Libraries in order to use it**
 
-### `npm start`
+- react-dom: (v17.0.2+)
+- react-icons: (v4.3.1+)
+- react-router-dom: (v6.2.2+)
+- react-toastify: (v8.2.0+)
+- firebase: (v9.6.10+)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **How to start from scratch**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+_Please keep in mind that you must have the latest version on npm on your console using the following command:_
 
-### `npm test`
+**_npm install -g npm_**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the project on your PC. On the command line, run the following command:
 
-### `npm run build`
+**_gh repo clone https://github.com/BlasPawluk/react_25470_blas_pawluk_coderhouse.git_**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install the necessary repository dependencies (Detailed Above). On the command line, run the following command:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**_npm install_**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Start the repository. On the command line of the console of your choice (Powershell, Git Bash and such), run the following command:
 
-### `npm run eject`
+**_npm start_**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## How To use:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Browse through the store and filter by category (Car Brand) or you can just select from the main page since all the items will be desplayed there. Select the desired product(s) and add them to the cart as you please.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Go to the shopping cart and review selected items, in case you change your mind about whats you've chosen, you can use the trash can icon to delete the selected products or you can clear the whole cart.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. Complete the purchase by clicking the blue button that's labeled with the same legend.
